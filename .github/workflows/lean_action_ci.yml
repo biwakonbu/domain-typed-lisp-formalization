@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  proof-smoke:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install elan
+        run: curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain stable
+      - name: Run proof smoke
+        run: |
+          source "$HOME/.elan/env"
+          bash ci/proof-smoke.sh

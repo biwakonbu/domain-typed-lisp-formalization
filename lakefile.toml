@@ -1,0 +1,10 @@
+name = "DomainTypedLispFormalization"
+version = "0.1.0"
+defaultTargets = ["domaintypedlispformalization"]
+
+[[lean_lib]]
+name = "DomainTypedLispFormalization"
+
+[[lean_exe]]
+name = "domaintypedlispformalization"
+root = "Main"
