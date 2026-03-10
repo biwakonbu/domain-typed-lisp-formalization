@@ -31,9 +31,15 @@ Lean 4 による `dtl` v0.6 コア意味論の形式化用リポジトリです�
 3. `refine_sound`
 
 ## 現在の状態
-- Lean stub は `lake build` で compile する。
-- theorem inventory の P0 セットは名前と依存先を固定済み。
-- 証明本体は未着手で、現時点では `axiom` と placeholder 定義で骨組みのみを持つ。
+- abstract fixedpoint semantics の P0 4 定理は Lean theorem として実装済み。
+- `lake build` / `bash ci/proof-smoke.sh` で `FixedpointExamples` まで compile する。
+- helper / P1 / P2 はまだ stub を含む。
+
+## P0 完了済み定理
+- `fixedpoint_step_monotone`
+- `fixedpoint_least_model_exists`
+- `fixedpoint_sound`
+- `fixedpoint_complete`
 
 ## fixture
 - `fixtures/semantics/negative-stratified/basic.dtl`

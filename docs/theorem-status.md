@@ -2,10 +2,10 @@
 
 | theorem | phase | status | note |
 | --- | --- | --- | --- |
-| `fixedpoint_step_monotone` | P0 | stub | declaration only |
-| `fixedpoint_least_model_exists` | P0 | stub | declaration only |
-| `fixedpoint_sound` | P0 | stub | declaration only |
-| `fixedpoint_complete` | P0 | stub | declaration only |
+| `fixedpoint_step_monotone` | P0 | proved | abstract carrier fixedpoint |
+| `fixedpoint_least_model_exists` | P0 | proved | abstract carrier fixedpoint |
+| `fixedpoint_sound` | P0 | proved | abstract carrier fixedpoint |
+| `fixedpoint_complete` | P0 | proved | abstract carrier fixedpoint |
 | `formula_eval_deterministic` | P1 | stub | declaration only |
 | `pattern_match_deterministic` | P1 | stub | declaration only |
 | `expr_eval_deterministic` | P1 | stub | declaration only |
