@@ -18,4 +18,4 @@
 - `rule_instantiation_sound`: stub
 - `rule_instantiation_complete`: stub
 - `constructor_normalization_preserves_value`: stub
-- `valuation_enumeration_complete`: stub
+- `valuation_enumeration_complete`: proved
