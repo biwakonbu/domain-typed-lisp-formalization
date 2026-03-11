@@ -6,9 +6,9 @@
 | `fixedpoint_least_model_exists` | P0 | proved | abstract carrier fixedpoint |
 | `fixedpoint_sound` | P0 | proved | abstract carrier fixedpoint |
 | `fixedpoint_complete` | P0 | proved | abstract carrier fixedpoint |
-| `formula_eval_deterministic` | P1 | stub | declaration only |
-| `pattern_match_deterministic` | P1 | stub | declaration only |
-| `expr_eval_deterministic` | P1 | stub | declaration only |
+| `formula_eval_deterministic` | P1 | proved | current core evaluator |
+| `pattern_match_deterministic` | P1 | proved | first-match arm selection |
+| `expr_eval_deterministic` | P1 | proved | current evaluator; `call` is unsupported |
 | `assert_sound` | P2 | stub | declaration only |
 | `refine_sound` | P2 | stub | declaration only |
 

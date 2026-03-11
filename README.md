@@ -33,6 +33,8 @@ Lean 4 による `dtl` v0.6 コア意味論の形式化用リポジトリです�
 ## 現在の状態
 - abstract fixedpoint semantics の P0 4 定理は Lean theorem として実装済み。
 - finite typed carrier 上の `valuation_enumeration_complete` は Lean theorem として実装済み。
+- `Formula` / `Pattern` / `Expr` の core evaluator と P1 determinism theorem を実装済み。
+- ただし `Expr.call` はまだ未解釈で、現時点では `none` を返す。
 - `lake build` / `bash ci/proof-smoke.sh` で `FixedpointExamples` まで compile する。
 - helper / P1 / P2 はまだ stub を含む。
 
