@@ -19,8 +19,13 @@ def enumerateValuations (carrier : TypedCarrier) : List (Name × DTLType) -> Lis
 def envOfAssignment (vars : List (Name × DTLType)) (σ : Name -> Value) : Env :=
   vars.map fun (name, _) => (name, σ name)
 
-def AssertionHolds (_facts : DerivedFacts) (_universe : Universe) (_obligation : AssertionObligation) :
-    Prop := True
+def AssignmentTyped (carrier : TypedCarrier) (vars : List (Name × DTLType)) (σ : Name -> Value) :
+    Prop :=
+  ∀ entry, entry ∈ vars -> σ entry.1 ∈ carrier entry.2
+
+def AssertionHolds (facts : DerivedFacts) (carrier : TypedCarrier)
+    (obligation : AssertionObligation) : Prop :=
+  ∀ env, env ∈ enumerateValuations carrier obligation.vars -> evalFormula facts env obligation.goal
 
 theorem valuation_enumeration_complete (carrier : TypedCarrier) :
     ∀ vars σ,
@@ -45,6 +50,13 @@ theorem valuation_enumeration_complete (carrier : TypedCarrier) :
       simpa [envOfAssignment] using
         (List.mem_map_of_mem (f := fun env => (name, σ name) :: env) ih')
 
-axiom assert_sound : Prop
+theorem assert_sound (facts : DerivedFacts) (carrier : TypedCarrier)
+    (obligation : AssertionObligation) :
+    AssertionHolds facts carrier obligation ->
+    ∀ σ, AssignmentTyped carrier obligation.vars σ ->
+      evalFormula facts (envOfAssignment obligation.vars σ) obligation.goal := by
+  intro hHolds σ hTyped
+  exact hHolds (envOfAssignment obligation.vars σ)
+    (valuation_enumeration_complete carrier obligation.vars σ hTyped)
 
 end DomainTypedLispFormalization

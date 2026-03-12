@@ -151,12 +151,6 @@ theorem iterate_stabilizes_by_length (op : ClosureOperator α) :
 theorem lfp_is_fixed_point (op : ClosureOperator α) : IsFixedPoint op (lfp op) := by
   exact iterate_stabilizes_by_length op
 
-axiom ground_substitution_closed : Prop
-axiom negative_literal_filter_sound : Prop
-axiom rule_instantiation_sound : Prop
-axiom rule_instantiation_complete : Prop
-axiom constructor_normalization_preserves_value : Prop
-
 theorem lfp_least (op : ClosureOperator α) :
     ∀ t, IsFixedPoint op t -> subset (lfp op) t := by
   intro t hfix
